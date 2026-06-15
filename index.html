@@ -287,10 +287,15 @@ const TAG_CLASS = { '주차 가능': 'green', '저가 (아아 3천원↓)': 'amb
 let selectedLocation = null;
 let suggestTimer = null;
 
-const today = new Date();
-const seed = today.getFullYear() * 10000 + (today.getMonth()+1) * 100 + today.getDate();
-const dailyNum = 1200 + (seed % 600);
-document.getElementById('trust-num').textContent = dailyNum.toLocaleString('ko-KR');
+fetch('https://hits.seeyoufarm.com/api/count/incr/badge.json?url=https%3A%2F%2Fseobi-connectn.github.io%2Fcafespot&count_bg=%23534AB7&title_bg=%23534AB7&icon=&title=&edge_flat=false')
+  .then(r => r.json())
+  .then(data => {
+    const count = parseInt(data.view.today) + 1200;
+    document.getElementById('trust-num').textContent = count.toLocaleString('ko-KR');
+  })
+  .catch(() => {
+    document.getElementById('trust-num').textContent = '1,284';
+  });
 
 document.querySelectorAll('.chip').forEach(chip => {
   chip.addEventListener('click', () => {
