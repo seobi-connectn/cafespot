@@ -287,7 +287,10 @@ const TAG_CLASS = { '주차 가능': 'green', '저가 (아아 3천원↓)': 'amb
 let selectedLocation = null;
 let suggestTimer = null;
 
-document.getElementById('trust-num').textContent = (1200 + Math.floor(Math.random() * 600)).toLocaleString('ko-KR');
+const today = new Date();
+const seed = today.getFullYear() * 10000 + (today.getMonth()+1) * 100 + today.getDate();
+const dailyNum = 1200 + (seed % 600);
+document.getElementById('trust-num').textContent = dailyNum.toLocaleString('ko-KR');
 
 document.querySelectorAll('.chip').forEach(chip => {
   chip.addEventListener('click', () => {
