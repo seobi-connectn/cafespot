@@ -56,6 +56,9 @@ header { text-align: center; padding: 36px 0 20px; }
 .empty-state { text-align: center; padding: 40px; color: #aaa; font-size: 14px; display: none; }
 .share-btn { width: 100%; padding: 13px; border-radius: 12px; border: 1.5px solid #e0e0e0; background: #fff; font-size: 14px; font-weight: 600; color: #555; cursor: pointer; margin-top: 8px; display: none; font-family: inherit; }
 footer { text-align: center; padding: 24px 0 0; font-size: 11px; color: #ccc; }
+.connect-banner { background: #26215C; border-radius: 14px; padding: 16px; margin: 16px 12px 8px; }
+.connect-banner-title { font-size: 13px; font-weight: 500; color: #fff; line-height: 1.7; margin-bottom: 14px; }
+.connect-banner-btn { display: inline-block; padding: 9px 20px; border-radius: 8px; background: #fff; color: #534AB7; font-size: 11px; font-weight: 500; text-decoration: none; }
 </style>
 <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8eca480144ca793268bb8ebcf039be92&libraries=services"></script>
 </head>
@@ -112,6 +115,10 @@ footer { text-align: center; padding: 24px 0 0; font-size: 11px; color: #ccc; }
   <div class="result-header" id="result-header"><div class="result-count" id="result-count"></div><div class="result-sub" id="result-sub"></div></div>
   <div class="cafe-list" id="cafe-list"></div>
   <div class="empty-state" id="empty-state"><div style="font-size:36px;margin-bottom:10px">☕</div><div>조건에 맞는 카페를 찾지 못했어요</div></div>
+  <div class="connect-banner">
+  <div class="connect-banner-title">이 카페에서 상담할<br>고객 DB도 같이 구매해보세요.</div>
+  <a class="connect-banner-btn" href="https://connectn.co.kr" target="_blank" rel="noopener">DB 구매하러 가기</a>
+</div>
   <button class="share-btn" id="share-btn" onclick="shareApp()">친구에게 카페스팟 공유하기</button>
   <footer>카페스팟 · 미팅·상담하기 좋은 카페 추천 서비스</footer>
 </div>
